@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.projet.j2ee.models.g_vente.Commande;
 import com.projet.j2ee.models.g_vente.LigneCmd;
 import com.projet.j2ee.repos.g_vente.LigneCmdRepository;
 import com.projet.j2ee.service.g_vente.LigneCmdService;
@@ -43,6 +44,7 @@ public class LigneCmdServiceImpl implements LigneCmdService {
 	@Override
 	public LigneCmd getLigneCmd(int codeLigneCmd) {
 		// TODO Auto-generated method stub
+		
 		return ligneCmdRepos.findById(codeLigneCmd).get();
 	}
 
@@ -51,5 +53,6 @@ public class LigneCmdServiceImpl implements LigneCmdService {
 		// TODO Auto-generated method stub
 		return ligneCmdRepos.findAll();
 	}
-
+	
+	
 }

@@ -1,6 +1,7 @@
 package com.projet.j2ee.service.g_vente.Implementation;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,10 @@ public class ArticleVenteServiceImpl implements ArticleVenteService {
 	@Override
 	public ArticleVente updateArticleVente(ArticleVente ar) {
 		// TODO Auto-generated method stub
-		return ArticleVenteRepository.save(ar);
+		
+		
+		
+		return ArticleVenteRepository.findById(ar.getCodeArt()).get();
 	}
 
 	@Override

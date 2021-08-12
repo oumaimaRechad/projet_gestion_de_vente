@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">  
+<struts>
+  <constant name="struts.devMode" value="true" />
+  <constant name="struts.objectFactory" value="spring" />
+  
+  <package name="com.hello" namespace="/" extends="struts-default">
+    <action name="articles" class="com.projet.j2ee.struts.controller.articleVenteAction" method="execute">
+      <result name="success">/WEB-INF/test.jsp</result>
+    </action>
+    <action name="add" class="com.projet.j2ee.struts.controller.articleVenteAction" method="add">
+      <result name="success">/WEB-INF/test.jsp</result>
+    </action>
+    <action name="update" class="com.projet.j2ee.struts.controller.articleVenteAction" method="update">
+      <result name="success">/WEB-INF/test1.jsp</result>
+    </action>
+   
+    <action name="showCommande" class="com.projet.j2ee.struts.controller.CommandeAction"  method="execute">
+      <result name="success"  >/WEB-INF/cmd.jsp</result>
+     
+    </action>
+    <action name="addCommande" class="com.projet.j2ee.struts.controller.CommandeAction" method="add">
+          <result name="success"  >/WEB-INF/cmd.jsp</result>
+      <result name="input"  >/WEB-INF/cmd.jsp</result>
+    </action>
+    <action name="updateActive" class="com.projet.j2ee.struts.controller.CommandeAction" method="updateActive">
+      <result name="success" >/WEB-INF/cmd.jsp</result>
+    </action>
+    <action name="updateEtat" class="com.projet.j2ee.struts.controller.CommandeAction" method="updateEtat">
+      <result name="success">/WEB-INF/cmd.jsp</result>
+    </action>
+    <action name="showligneCmd" class="com.projet.j2ee.struts.controller.ligneCmdAction" method="execute" >
+      <result name="success" >/WEB-INF/ligneCommande.jsp</result>
+    </action>
+    <action name="ligneCmd" class="com.projet.j2ee.struts.controller.ligneCmdAction" method="add" >
+      <result name="success">/WEB-INF/ligneCommande.jsp</result>
+       <result name="input" > /WEB-INF/formNewligneCmd.jsp</result>
+    </action>
+     <action name="formLignCmd" class="com.projet.j2ee.struts.controller.ligneCmdAction" method="test" >
+      <result name="success" >/WEB-INF/formNewligneCmd.jsp</result>
+    </action>
+    <action name="showFacture" class="com.projet.j2ee.struts.controller.factureAction" method="execute" >
+      <result name="success" >/WEB-INF/jsp/facture.jsp</result>
+    </action>
+    <action name="facture" class="com.projet.j2ee.struts.controller.factureAction" method="facture" >
+      <result name="success" >/WEB-INF/detailsFacture.jsp</result>
+    </action>
+    <action name="facturee" class="com.projet.j2ee.struts.controller.factureAction" method="facturee" >
+      <result name="success" >/WEB-INF/jsp/facture.jsp</result>
+    </action>
+    <action name="formEncaissement" class="com.projet.j2ee.struts.controller.ReglementAction" method="execute" >
+      <result name="success" >/WEB-INF/reglement.jsp</result>
+    </action>
+     <action name="payer" class="com.projet.j2ee.struts.controller.ReglementAction" method="add" >
+      <result name="success" >/WEB-INF/reglement.jsp</result>
+    </action>
+     <action name="showClient" class="com.projet.j2ee.struts.controller.ClientAction" method="execute" >
+      <result name="success" >/WEB-INF/client.jsp</result>
+    </action>
+     <action name="addClient" class="com.projet.j2ee.struts.controller.ClientAction" method="add" >
+      <result name="success" >/WEB-INF/client.jsp</result>
+    </action>
+     <action name="updateClient" class="com.projet.j2ee.struts.controller.ClientAction" method="update" >
+      <result name="success" >/WEB-INF/client.jsp</result>
+    </action>
+   
+  </package>
+</struts>

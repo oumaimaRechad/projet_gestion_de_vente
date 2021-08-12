@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -23,14 +24,39 @@ public class Commande {
 	private int   qteCmd;
 	private Date   dateCmd;
 	private String  etatCmd;
-	private int     idClt;
-	public Commande(int qteCmd, Date dateCmd, String etatCmd, int idClt) {
+	private String active;
+	public String getActive() {
+		return active;
+	}
+	public void setActive(String active) {
+		this.active = active;
+	}
+	public Commande(int codeCmd, int qteCmd, Date dateCmd, String etatCmd, String active, Client clt) {
+		super();
+		this.codeCmd = codeCmd;
+		this.qteCmd = qteCmd;
+		this.dateCmd = dateCmd;
+		this.etatCmd = etatCmd;
+		this.active = active;
+		this.clt = clt;
+	}
+	@ManyToOne
+	private Client  clt;
+	public Commande(int qteCmd, Date dateCmd, String etatCmd, String active, Client clt) {
 		super();
 		this.qteCmd = qteCmd;
 		this.dateCmd = dateCmd;
 		this.etatCmd = etatCmd;
-		this.idClt = idClt;
+		this.active = active;
+		this.clt = clt;
 	}
+	public Client getClt() {
+		return clt;
+	}
+	public void setClt(Client clt) {
+		this.clt = clt;
+	}
+
 	public Commande() {}
 	public int getCodeCmd() {
 		return codeCmd;
@@ -56,12 +82,7 @@ public class Commande {
 	public void setEtatCmd(String etatCmd) {
 		this.etatCmd = etatCmd;
 	}
-	public int getIdClt() {
-		return idClt;
-	}
-	public void setIdClt(int idClt) {
-		this.idClt = idClt;
-	}
+	
 	
 	
 }

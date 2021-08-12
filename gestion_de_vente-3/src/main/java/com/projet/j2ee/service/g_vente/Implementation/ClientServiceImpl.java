@@ -19,9 +19,9 @@ public class ClientServiceImpl implements ClientService {
 	}
 
 	@Override
-	public Client updateClient(Client clt) {
+	public Client updateClient(int codeClt) {
 		// TODO Auto-generated method stub
-		return clientRepository.save(clt);
+		return clientRepository.findById(codeClt).get();
 	}
 
 	@Override

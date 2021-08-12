@@ -2,6 +2,7 @@ package com.projet.j2ee.service.g_vente;
 
 import java.util.List;
 
+import com.projet.j2ee.models.g_vente.Commande;
 import com.projet.j2ee.models.g_vente.LigneCmd;
 
 public interface LigneCmdService {
@@ -11,4 +12,5 @@ public interface LigneCmdService {
 	void deleteLigneCmdById(int codeLigneCmd);
 	LigneCmd getLigneCmd(int codeLigneCmd);
 	List<LigneCmd> getAllLigneCmd();
+	
 }

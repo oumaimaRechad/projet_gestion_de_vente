@@ -22,16 +22,37 @@ public class ArticleVente {
 	private String nomArt;
 	@Basic
 	private String descArt;
+	@Basic
+	private int qteArt;
+
+	public ArticleVente(String nomArt, String descArt, int qteArt, int prixArt) {
+		super();
+		this.nomArt = nomArt;
+		this.descArt = descArt;
+		this.qteArt = qteArt;
+		this.prixArt = prixArt;
+	}
+	public ArticleVente(int codeArt, String nomArt, String descArt, int qteArt, int prixArt) {
+		super();
+		this.codeArt = codeArt;
+		this.nomArt = nomArt;
+		this.descArt = descArt;
+		this.qteArt = qteArt;
+		this.prixArt = prixArt;
+	}
+	public int getQteArt() {
+		return this.qteArt;
+	}
+	public void setQteArt(int qteArt) {
+		this.qteArt = qteArt;
+	}
+	
+	
 
 	@Basic
 	private int prixArt;
 	
-	public ArticleVente(String nomArt, String descArt, int prixArt) {
-		super();
-		this.nomArt = nomArt;
-		this.descArt = descArt;
-		this.prixArt = prixArt;
-	}
+	
 	public ArticleVente() {}
 	public int getCodeArt() {
 		return codeArt;

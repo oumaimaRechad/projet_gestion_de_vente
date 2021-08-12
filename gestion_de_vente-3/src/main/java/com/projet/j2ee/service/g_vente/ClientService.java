@@ -6,7 +6,7 @@ import com.projet.j2ee.models.g_vente.Client;
 
 public interface ClientService {
 	Client saveClient(Client clt);
-	Client updateClient(Client clt);
+	Client updateClient(int codeClt);
 	void deleteClient(Client clt);
 	void deleteClientById(int idClt);
 	Client getClient(int idClt);
